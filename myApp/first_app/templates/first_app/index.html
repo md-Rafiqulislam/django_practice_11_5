@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>DA - welcome to meal page</title>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/first_app_universal' %}">
+{% endblock %}
+
+
+{% block content %}
+    <h1 class="test-primary text-center mt-3 mb-5">welcome to see the all meals</h1>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="container-fluid">
+            <div class="row d-flex flex-wrap">
+                {% for meal in allMeals %}
+                <div class="col-3 border border-primary m-3 rounded p-2">
+                    <div>
+                        <img src="{{ meal.strMealThumb }}" alt="" class="img-fluid rounded">
+                    </div>
+                    <div>
+                        <h3 class="fs-6 text-info">{{ meal.strMeal }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

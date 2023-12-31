@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Django Application home page</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container rounded">
+        <h1 class="text-center text-info bg-dark pt-2 pb-2">this is the home page</h1>
+    </div>
+    <div>if you want see the meal page. then go to <a href="{% url 'first_app_home' %}">Meal page</a></div>
+{% endblock %}
